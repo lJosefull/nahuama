@@ -1,7 +1,8 @@
 @extends('layouts.template')
 
 @section('content')
-@livewire('counter')
+
+<livewire:counter />
 <div class="arriv">
 	<div class="container">
 		<div class="arriv-top">

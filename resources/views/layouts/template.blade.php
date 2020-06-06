@@ -25,7 +25,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
 <script src="js/menu_jquery.js"></script>
 <script src="js/simpleCart.min.js"> </script>
-@livewireStyles
+<livewire:styles>
 </head>
 <body>
 <!-- header_top -->
@@ -801,6 +801,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<p>Copyrights © 2015 Gretong. All rights reserved | Template by <a href="http://w3layouts.com/">W3layouts</a></p>
 	</div>
 </div>
-@livewireScripts
+<livewire:scripts>
 </body>
 </html>
