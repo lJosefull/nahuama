@@ -14,4 +14,13 @@ class Sub_Category extends Model
     {
         return $this->belongsTo('App\Category', 'category_id');
     }
+
+    public function Product()
+    {
+        return $this->hasMany('App\Product');
+    }
+    public function Sub_SubCategory()
+    {
+        return $this->hasMany('App\Sub_SubCategory','sub_category_id');
+    }
 }

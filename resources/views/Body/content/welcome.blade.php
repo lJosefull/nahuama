@@ -2,7 +2,8 @@
 
 @section('content')
 
-<livewire:counter />
+
+
 <div class="arriv">
 	<div class="container">
 		<div class="arriv-top">

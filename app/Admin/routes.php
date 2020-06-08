@@ -16,6 +16,6 @@ Route::group([
     $router->resource('products', ProductController::class);
     $router->resource('categories', CategoryController::class);
     $router->resource('sub-categories', SubCategoryController::class);
-
+    $router->resource('sub_subcategories', SubSubCategoryController::class);
 });
 

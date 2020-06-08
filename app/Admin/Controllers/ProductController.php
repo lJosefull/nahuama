@@ -8,6 +8,7 @@ use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
 use App\Category;
+use App\Sub_Category;
 
 class ProductController extends AdminController
 {
@@ -86,8 +87,22 @@ class ProductController extends AdminController
     {
         $form = new Form(new Product());
 
-        $form->number('category_id', __('Category id'));
-        $form->number('sub_category_id', __('Sub category id'));
+        $sCat = 
+
+
+        $form->select('category_id', __('Category id'))->options(
+            Category::all()->mapWithKeys(function ($item) {
+                return [$item['id'] => $item['name']];
+            })
+        );
+        $form->select('sub_category_id', __('Sub category id'))->options(
+            Sub_Category::all()->mapWithKeys(function ($item) {
+                return [$item['id'] => $item['name']];
+            })
+        );
+       
+        //aqui quiero hacer el select para agregar las categoria y sub_categorias
+
         $form->text('name', __('Name'));
         $form->number('price', __('Price'));
         $form->number('discount', __('Discount'));

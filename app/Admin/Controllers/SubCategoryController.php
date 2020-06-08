@@ -7,6 +7,7 @@ use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
+use App\Category;
 
 class SubCategoryController extends AdminController
 {
@@ -63,7 +64,11 @@ class SubCategoryController extends AdminController
     {
         $form = new Form(new Sub_Category());
 
-        $form->number('category_id', __('Category id'));
+        $form->select('category_id', __('Category id'))->options(
+            Category::all()->mapWithKeys(function ($item) {
+                return [$item['id'] => $item['name']];
+            })
+        );
         $form->text('name', __('Name'));
 
         return $form;
