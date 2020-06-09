@@ -17,5 +17,6 @@ Route::group([
     $router->resource('categories', CategoryController::class);
     $router->resource('sub-categories', SubCategoryController::class);
     $router->resource('sub_subcategories', SubSubCategoryController::class);
+    $router->resource('banner-homes', BannerHomeController::class);
 });
 

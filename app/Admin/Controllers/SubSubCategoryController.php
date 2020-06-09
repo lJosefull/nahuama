@@ -8,6 +8,7 @@ use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
 use App\Sub_Category;
+use App\Category;
 class SubSubCategoryController extends AdminController
 {
     /**
@@ -58,18 +59,29 @@ class SubSubCategoryController extends AdminController
      * Make a form builder.
      *
      * @return Form
-     */
+     */ 
     protected function form()
     {
+       
         $form = new Form(new Sub_SubCategory());
 
-        $form->select('sub_category_id', __('Sub category id'))->options(
-            Sub_Category::all()->mapWithKeys(function ($item) {
-                
-              
+        
+
+        $form->select('category_id',__('Category'))->options(
+            Category::all()->mapWithKeys(function ($item) {
                 return [ $item['id'] => $item['name']];
             })
-        );
+        )->load('sub_category_id','/e-commerce/public/api/sub-cat');
+       
+        $form->select('sub_category_id')->options(function ($id) {
+            $scat = Sub_Category::find($id);
+        
+            if ($scat) {
+                return [$scat->id => $scat->name];
+            }
+        })->ajax('/e-commerce/public/api/s-cat');
+
+
         $form->text('name', __('Name'));
 
         return $form;
