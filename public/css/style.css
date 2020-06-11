@@ -376,7 +376,7 @@ ul.qty li p{
 			float:left;
 			margin: 5px 20px 5px 20px ;
 		}
-.item_add {
+.items_add {
   border: none;
   color: #3f3d3d;
   padding: 10px 20px;
@@ -389,7 +389,7 @@ ul.qty li p{
 .grid_1 img{
 	margin-bottom:1em;
 }
-span.item_price {
+span.items_price {
   color: #3f3d3d;
   font-size: 1.2em;
   font-weight: 400;
@@ -431,7 +431,7 @@ select.item_Size {
   padding: 5px 10px;
   margin-top: 1em;
 }
-.item_add  a{
+.items_add  button{
   background: rgb(9, 209, 182);
   border: none;
   color: #fff;

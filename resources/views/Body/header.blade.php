@@ -4,13 +4,13 @@
 		<div class="header_top">
 			<div class="top_right">
 				<ul>
-					<li><a href="#">help</a></li>|
-					<li><a href="contact.html">Contact</a></li>|
-					<li><a href="#">Delivery information</a></li>
+					<li><a href="#">Ayuda</a></li>|
+					<li><a href="contact.html">Contactenos</a></li>|
+					<li><a href="#">Informacion de envio</a></li>
 				</ul>
 			</div>
 			<div class="top_left">
-				<h2><span></span> Call us : 032 2352 782</h2>
+				<h2><span></span> llameno : +(57) 321-742-514-7</h2>
 			</div>
 				<div class="clearfix"> </div>
 		</div>
@@ -29,7 +29,7 @@
 			<div class="rgt-bottom">
 				<div class="log">
 					<div class="login" >
-						<div id="loginContainer"><a href="#" id="loginButton"><span>Login</span></a>
+						<div id="loginContainer"><a href="#" id="loginButton"><span>Iniciar sesion</span></a>
 						    <div id="loginBox">                
 						        <form id="loginForm">
 						                <fieldset id="body">
@@ -55,7 +55,7 @@
 				</div>
 			<div class="cart box_1">
 				<a href="checkout.html">
-					<h3> <span class="simpleCart_total">$0.00</span> (<span id="simpleCart_quantity" class="simpleCart_quantity">0</span> items)<img src="images/bag.png" alt=""></h3>
+				<h3> <span class="simpleCart_total">$0.00</span> (<span id="simpleCart_quantity" class="simpleCart_quantity">0</span> items)<img src="images/bag.png" alt=""></h3>
 				</a>	
 				<p><a href="javascript:;" class="simpleCart_empty">(empty card)</a></p>
 				<div class="clearfix"> </div>

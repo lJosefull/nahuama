@@ -20,3 +20,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('sub-cat', 'AdminApiController@subCat');
 Route::get('s-cat', 'AdminApiController@sCat');
+
+Route::get('sub-scat', 'AdminApiController@subsCat');
+Route::get('s-scat', 'AdminApiController@ssCat');
