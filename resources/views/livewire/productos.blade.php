@@ -10,8 +10,10 @@
 				<div class="special-info grid_1 simpleCart_shelfItem">
 					<h5>{{$product->name}}</h5>
 					<div class=""><span class=""><h6>{{$product->price}}</h6></span></div>
-				<div class="items_add"><span class="items_price">  <button wire:click="addcard({{$product->id}})">añadir al carrito</button></span></div>
+				<div class="items_add"><span class="items_price">  <button wire:click="$emitTo('cards','addcard',{{$product->id}})">añadir al carrito</button></span></div>
 				</div>
+
+
 		</li>
         @endforeach
 		<div class="clearfix"> </div>
