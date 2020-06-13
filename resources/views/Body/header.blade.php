@@ -28,31 +28,69 @@
 		<div class="header_right">
 			<div class="rgt-bottom">
 				<div class="log">
+
 					<div class="login" >
-						<div id="loginContainer"><a href="#" id="loginButton"><span>Iniciar sesion</span></a>
-						    <div id="loginBox">                
-						        <form id="loginForm">
+
+						<div id="loginContainer">
+                            @if (Auth::guest())
+                            <a href="#" id="loginButton"><span>Iniciar sesion</span></a>
+						    <div id="loginBox">
+								 <form id="loginForm" method="POST" action="{{ route('login') }}">
+									@csrf
 						                <fieldset id="body">
 						                	<fieldset>
 						                          <label for="email">Email Address</label>
-						                          <input type="text" name="email" id="email">
+												  <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+
 						                    </fieldset>
 						                    <fieldset>
+												@error('email')
+													<span class="invalid-feedback" role="alert">
+														<strong>{{ $message }}</strong>
+													</span>
+												@enderror
 						                            <label for="password">Password</label>
-						                            <input type="password" name="password" id="password">
+													<input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 						                     </fieldset>
-						                    <input type="submit" id="login" value="Sign in">
-						                	<label for="checkbox"><input type="checkbox" id="checkbox"> <i>Remember me</i></label>
+
+											<button type="submit" id="login">
+												{{ __('Login') }}
+											</button>
+						                	<label for="checkbox"><input  type="checkbox" name="remember" id="checkbox" {{ old('remember') ? 'checked' : '' }}>
+												<i>Remember me</i></label>
 						            	</fieldset>
 						            <span><a href="#">Forgot your password?</a></span>
-								</form>
-							</div>
-						</div>
+                                </form>
+
+                            </div>
+                            @else
+                            <a href="#" id="loginButton"><span>Cuenta</span></a>
+						    <div id="loginBox">
+                                <div id="loginForm">
+                                    <li class="list-group-item">Mi Cuenta</li>
+                                    <li class="list-group-item">Mis Pedidos</li>
+                                    <li class="list-group-item">Mis Favoritos</li>
+                                    <li class="list-group-item">Mi Informacion</li>
+                                    <li class="list-group-item"> <a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                      document.getElementById('logout-form').submit();">
+                                         salir
+                                     </a>
+                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form></li>
+                            </div>
+                            </div>
+                            @endif
+                        </div>
+
 					</div>
-				</div>
+                </div>
+                @if (Auth::guest())
 				<div class="reg">
 					<a href="register.html">REGISTER</a>
-				</div>
+                </div>
+                @endif
 				<livewire:cards />
 			<div class="create_btn">
 				<a href="checkout.html">CHECKOUT</a>
